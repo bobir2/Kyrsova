@@ -1,0 +1,51 @@
+<Window x:Class="Kursova.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Склад продуктів харчування"
+        Height="720" Width="1200"
+        MinHeight="600" MinWidth="900"
+        WindowStartupLocation="CenterScreen"
+        Background="{StaticResource BackgroundBrush}">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="240" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+
+        <Border Grid.Column="0" Background="{StaticResource PrimaryBrush}">
+            <DockPanel>
+                <StackPanel DockPanel.Dock="Top" Margin="20,24,20,16">
+                    <TextBlock Text="🍎 Склад продуктів" FontSize="20" FontWeight="Bold" Foreground="White" />
+                    <TextBlock Text="Система обліку складу" FontSize="12" Foreground="#C8E6C9" Margin="0,4,0,0" />
+                </StackPanel>
+
+                <StackPanel Margin="8,0,8,16">
+                    <Button Style="{StaticResource NavButtonStyle}" Content="📊 Панель керування"
+                            Command="{Binding NavigateDashboardCommand}" />
+                    <Button Style="{StaticResource NavButtonStyle}" Content="📦 Продукти"
+                            Command="{Binding NavigateProductsCommand}" />
+                    <Button Style="{StaticResource NavButtonStyle}" Content="🏷 Категорії"
+                            Command="{Binding NavigateCategoriesCommand}" />
+                    <Button Style="{StaticResource NavButtonStyle}" Content="🚚 Постачальники"
+                            Command="{Binding NavigateSuppliersCommand}" />
+                    <Button Style="{StaticResource NavButtonStyle}" Content="↔ Рух товарів"
+                            Command="{Binding NavigateMovementsCommand}" />
+                </StackPanel>
+            </DockPanel>
+        </Border>
+
+        <Grid Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+
+            <Border Background="{StaticResource CardBrush}" Padding="24,16" BorderBrush="#E0E0E0" BorderThickness="0,0,0,1">
+                <TextBlock Text="{Binding Title}" FontSize="22" FontWeight="SemiBold" Foreground="{StaticResource TextBrush}" />
+            </Border>
+
+            <ContentControl Grid.Row="1" Margin="24" Content="{Binding CurrentViewModel}" />
+        </Grid>
+    </Grid>
+</Window>

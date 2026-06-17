@@ -1,0 +1,19 @@
+<UserControl x:Class="Kursova.Views.CategoriesView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <DockPanel>
+        <StackPanel DockPanel.Dock="Top" Orientation="Horizontal" Margin="0,0,0,12">
+            <Button Content="➕ Додати" Command="{Binding AddCommand}" />
+            <Button Content="✏ Редагувати" Command="{Binding EditCommand}" Style="{StaticResource SecondaryButtonStyle}" />
+            <Button Content="🗑 Видалити" Command="{Binding DeleteCommand}" Background="{StaticResource DangerBrush}" />
+            <Button Content="🔄" Command="{Binding RefreshCommand}" Style="{StaticResource SecondaryButtonStyle}" Width="40" />
+        </StackPanel>
+
+        <DataGrid ItemsSource="{Binding Categories}" SelectedItem="{Binding SelectedCategory}">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Назва" Binding="{Binding Name}" Width="*" />
+                <DataGridTextColumn Header="Опис" Binding="{Binding Description}" Width="3*" />
+            </DataGrid.Columns>
+        </DataGrid>
+    </DockPanel>
+</UserControl>

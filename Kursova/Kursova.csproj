@@ -1,0 +1,65 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UseWPF>true</UseWPF>
+    <RootNamespace>Kursova</RootNamespace>
+    <AssemblyName>Kursova</AssemblyName>
+    <LangVersion>latest</LangVersion>
+    <EnableDefaultCompileItems>false</EnableDefaultCompileItems>
+    <EnableDefaultPageItems>false</EnableDefaultPageItems>
+    <EnableDefaultApplicationDefinition>false</EnableDefaultApplicationDefinition>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Data.Sqlite" Version="8.0.11" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml" />
+    <Page Include="MainWindow.xaml" />
+    <Page Include="Views\CategoriesView.xaml" />
+    <Page Include="Views\CategoryEditWindow.xaml" />
+    <Page Include="Views\DashboardView.xaml" />
+    <Page Include="Views\ProductEditWindow.xaml" />
+    <Page Include="Views\ProductsView.xaml" />
+    <Page Include="Views\StockMovementsView.xaml" />
+    <Page Include="Views\StockMovementWindow.xaml" />
+    <Page Include="Views\SupplierEditWindow.xaml" />
+    <Page Include="Views\SuppliersView.xaml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Include="App.xaml.cs" DependentUpon="App.xaml" />
+    <Compile Include="MainWindow.xaml.cs" DependentUpon="MainWindow.xaml" />
+    <Compile Include="Converters\Converters.cs" />
+    <Compile Include="Data\DatabaseInitializer.cs" />
+    <Compile Include="Data\WarehouseRepository.cs" />
+    <Compile Include="Models\Category.cs" />
+    <Compile Include="Models\DashboardStats.cs" />
+    <Compile Include="Models\Product.cs" />
+    <Compile Include="Models\StockMovement.cs" />
+    <Compile Include="Models\Supplier.cs" />
+    <Compile Include="ViewModels\CategoriesViewModel.cs" />
+    <Compile Include="ViewModels\DashboardViewModel.cs" />
+    <Compile Include="ViewModels\MainViewModel.cs" />
+    <Compile Include="ViewModels\ProductsViewModel.cs" />
+    <Compile Include="ViewModels\RelayCommand.cs" />
+    <Compile Include="ViewModels\StockMovementsViewModel.cs" />
+    <Compile Include="ViewModels\SuppliersViewModel.cs" />
+    <Compile Include="ViewModels\ViewModelBase.cs" />
+    <Compile Include="Views\CategoriesView.xaml.cs" DependentUpon="Views\CategoriesView.xaml" />
+    <Compile Include="Views\CategoryEditWindow.xaml.cs" DependentUpon="Views\CategoryEditWindow.xaml" />
+    <Compile Include="Views\DashboardView.xaml.cs" DependentUpon="Views\DashboardView.xaml" />
+    <Compile Include="Views\ProductEditWindow.xaml.cs" DependentUpon="Views\ProductEditWindow.xaml" />
+    <Compile Include="Views\ProductsView.xaml.cs" DependentUpon="Views\ProductsView.xaml" />
+    <Compile Include="Views\StockMovementsView.xaml.cs" DependentUpon="Views\StockMovementsView.xaml" />
+    <Compile Include="Views\StockMovementWindow.xaml.cs" DependentUpon="Views\StockMovementWindow.xaml" />
+    <Compile Include="Views\SupplierEditWindow.xaml.cs" DependentUpon="Views\SupplierEditWindow.xaml" />
+    <Compile Include="Views\SuppliersView.xaml.cs" DependentUpon="Views\SuppliersView.xaml" />
+  </ItemGroup>
+
+</Project>
